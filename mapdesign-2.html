@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Visual Comparison of Multi-Faceted Data</title>
+  <link rel="stylesheet" href="https://libs.cartocdn.com/airship-style/v2.4.0/airship.css">
+  <script type="module" src="https://libs.cartocdn.com/airship-components/v2.4.0/airship/airship.esm.js"></script>
+  <script nomodule="" src="https://libs.cartocdn.com/airship-components/v2.4.0/airship/airship.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/leaflet.css">
+  <link rel="stylesheet" href="css/leaflet.bookmarks.min.css" />
+  <link rel="stylesheet" href="css/webportal.css">
+
+
+</head>
+
+<body class="as-app-body as-app">
+  <div role="tablist" class="as-toolbar-tabs as-tabs">
+    <button onclick="showMap(event)" role="tab" class="as-tabs__item as-tabs__item--active">MAP</button>
+    <button onclick="showLegendsPanel(event); setActiveTab(event.target);" role="tab"
+      class="as-tabs__item">LEGENDS</button>
+  </div>
+
+  <div class="as-content">
+    <main class="as-main">
+      <div class="as-map-area">
+        <div class="map" id="map" style="width: 50%;"></div>
+        <div class="map" id="map2" style="width: 50%;"></div>
+
+        <div class="as-map-panels">
+          <div class="as-panel as-panel--top as-panel--center">
+            <div class="as-panel__element  map-title" style="margin-right: 32rem;">
+              YEAR <span id="left_map_year">2007</span>
+            </div>
+            <div class="as-panel__element  map-title">
+              YEAR <span id="right_map_year">2007</span>
+            </div>
+          </div>
+          <div class="as-panel as-panel--top as-panel--left layers-control-panel">
+
+
+            <div class="as-panel__element panel-custom">
+              <section class="as-box" style="background: #ba004d;">
+                <h6 class=" text-center menu-bar" onclick="toggleMenu()">
+                  MENU
+                  <span class="float-right mr-2" role="button"><i class="fa fa-caret-down"></i></span>
+                </h6>
+              </section>
+
+              <as-tabs>
+                <div class="as-p--12" role="tabpanel" data-title="Left Map">
+                  <section class="as-box">
+                    <p class="as-title layer-panel-header border-bottom">ACTIVITIES</p>
+
+                    <section>
+                      <ul class="as-list--simple">
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelector" id="exp_a"
+                            value="exp_a" />
+                          <label class="as-caption" for="exp_a">Aesthetic Expectation</label>
+                        </li>
+
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelector" id="exp_c"
+                            value="exp_c" />
+                          <label class="as-caption" for="exp_c">Cultural Expectation</label>
+                        </li>
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelector" id="exp_sp"
+                            value="exp_sp" />
+                          <label class="as-caption" for="exp_sp">Sports Expectation</label>
+                        </li>
+
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelector" id="exp_w"
+                            value="exp_w" />
+                          <label class="as-caption" for="exp_w">Wildlife Expectation</label>
+                        </li>
+                      </ul>
+                      <ul class="as-list--simple">
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelector" id="popl_a"
+                            value="popl_a" />
+                          <label class="as-caption" for="popl_a">Aesthetic Popularity</label>
+                        </li>
+
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelector" id="popl_c"
+                            value="popl_c" />
+                          <label class="as-caption" for="popl_c">Cultural Popularity</label>
+                        </li>
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelector" id="popl_sp"
+                            value="popl_sp" checked />
+                          <label class="as-caption" for="popl_sp">Sports Popularity</label>
+                        </li>
+
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelector" id="popl_w"
+                            value="popl_w" />
+                          <label class="as-caption" for="popl_w">Wildlife Popularity</label>
+                        </li>
+
+                      </ul>
+                      
+                    </section>
+
+                  </section>
+
+
+
+                  <section class="as-box">
+                    <p class="as-title layer-panel-header border-bottom">YEAR</p>
+                    <select class="custom-select col-6 " id="left_year_selector">
+                      <option value="2007" selected>2007</option>
+                      <option value="2008">2008</option>
+                      <option value="2009">2009</option>
+                      <option value="2010">2010</option>
+                      <option value="2011">2011</option>
+                      <option value="2012">2012</option>
+                      <option value="2013">2013</option>
+                      <option value="2014">2014</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                    </select>
+                    
+                  </section>
+                </div>
+
+
+
+                <div class="as-p--12" role="tabpanel" data-title="Right Map">
+                  <section class="as-box">
+                    <p class="as-title layer-panel-header border-bottom">ACTIVITIES</p>
+
+                    <section>
+                      <ul class="as-list--simple">
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelectorR" id="exp_a"
+                            value="exp_a" />
+                          <label class="as-caption" for="exp_a">Aesthetic Expectation</label>
+                        </li>
+                    
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelectorR" id="exp_c"
+                            value="exp_c" />
+                          <label class="as-caption" for="exp_c">Cultural Expectation</label>
+                        </li>
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelectorR" id="exp_sp"
+                            value="exp_sp" />
+                          <label class="as-caption" for="exp_sp">Sports Expectation</label>
+                        </li>
+                    
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelectorR" id="exp_w"
+                            value="exp_w" />
+                          <label class="as-caption" for="exp_w">Wildlife Expectation</label>
+                        </li>
+                      </ul>
+                      <ul class="as-list--simple">
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelectorR" id="popl_a"
+                            value="popl_a" />
+                          <label class="as-caption" for="popl_a">Aesthetic Popularity</label>
+                        </li>
+                    
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelectorR" id="popl_c"
+                            value="popl_c" />
+                          <label class="as-caption" for="popl_c">Cultural Popularity</label>
+                        </li>
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelectorR" id="popl_sp"
+                            value="popl_sp" checked />
+                          <label class="as-caption" for="popl_sp">Sports Popularity</label>
+                        </li>
+                    
+                        <li class="as-radio">
+                          <input class="as-radio__input" type="radio" name="polygonLayerSelectorR" id="popl_w"
+                            value="popl_w" />
+                          <label class="as-caption" for="popl_w">Wildlife Popularity</label>
+                        </li>
+                    
+                      </ul>
+                    </section>
+
+                  </section>
+
+
+
+                  <section class="as-box">
+                    <p class="as-title layer-panel-header border-bottom">YEAR</p>
+                   
+                    <select class="custom-select col-6 " id="right_year_selector" style="float: right;">
+                      <option value="2007">2007</option>
+                      <option value="2008" selected>2008</option>
+                      <option value="2009">2009</option>
+                      <option value="2010">2010</option>
+                      <option value="2011">2011</option>
+                      <option value="2012">2012</option>
+                      <option value="2013">2013</option>
+                      <option value="2014">2014</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                    </select>
+                  </section>
+                </div>
+              </as-tabs>
+
+
+            </div>
+          </div>
+
+          <div class="as-panel as-panel--top as-panel--right as-panel--vertical legend-panel" id="legend">
+            <div class="as-panel__element">
+              <section class="as-box legend-box">
+                <p class="as-title layer-panel-header border-bottom">Legend</p>
+
+                <p class="as-body">
+                <div class="row m-0 p-1">
+                  <div class='my-legend'>
+                    <div class='legend-title'>
+                      Left Map: <span class="legend-title-l" >Sports Popularity</span>
+                    </div>
+                    <div class='legend-title'>
+                      Right Map: <span class="legend-title-r">Sports Popularity</span>
+                    </div>
+
+                    <div class='legend-scale' id="legendScale">
+
+                    </div>
+                  </div>
+                </div>
+
+                <p class="as-caption">Data source:<a href="https://tu-dresden.de/bu/umwelt/geo/ifk?set_language=en">
+                    Institute of Cartography (TUD)</a></p>
+                </p>
+              </section>
+            </div>
+          </div>
+          <div class="bottom-panel-one as-panel--center">
+            <div class="row">
+              <div class="col-6">
+                <div class="modal-header" style="display: none;">
+                  <h5 class="modal-title text-center" id="locationName"></h5>
+                  
+                  <!-- <button type="button" class="close" aria-label="Close" onclick="hideGraph()">
+                    <span aria-hidden="true">&times;</span>
+                  </button> -->
+                </div>
+                <h6 class="area-header text-center" style="display: none;" id="locationArea"></h6>
+                <figure class="highcharts-figure">
+                  <div id="container"></div>
+
+                </figure>
+              </div>
+              <div class="col-6">
+                <div class="modal-header" style="display: none;">
+                  <h5 class="modal-title text-center" id="locationName2"></h5>
+                  
+                  <button type="button" class="close" aria-label="Close" onclick="hideGraph()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <h6 class="area-header text-center " style="display: none;" id="locationArea2"></h6>
+                <figure class="highcharts-figure">
+                  <div id="container-2"></div>
+
+                </figure>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+  </div>
+  </main>
+  </div>
+
+
+  <script src="js/leaflet.js"></script>
+  <script src="js/L.Map.Sync.js"></script>
+  <script src="js/L.Control.Bookmarks.js"></script>
+  <script src="js/leaflet.zoomhome.min.js"></script>
+
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a88fa10f74.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+  <script src="js/highcharts.js"></script>
+  <script src="js/accessibility.js"></script>
+
+  <script src="js/topojson.v1.min.js"></script>
+
+  <script src="js/db_data.js"></script>
+  <script src="js/index.js"></script>
+
+  <script src="js/tabs.js"></script>
+
+
+
+</body>
+
+</html>

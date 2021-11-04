@@ -1,0 +1,319 @@
+html,body{
+    color: #ed0364;
+    background-color: #777;
+}
+.text-theme{
+    color: #ed0364;
+}
+.layers-control-panel{
+    width: 250px;
+    height: 60%;
+    background: #242424;
+    /* min-height: 520px; */
+    overflow: hidden;
+    -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -ms-transition: all .8s ease;
+    -o-transition: all .8s ease;
+    transition: all .8s ease;
+}
+.layers-control-panel-r{
+    width: 250px;
+    height: 60%;
+    background: #242424;
+    /* min-height: 520px; */
+    overflow: hidden;
+    -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -ms-transition: all .8s ease;
+    -o-transition: all .8s ease;
+    transition: all .8s ease;
+}
+.as-panel__element{
+    max-width: 450px;
+}
+.panel-custom{
+    max-width: 450px;
+    width: 250px;
+	/* background: darkgray; */
+    background: #242424;
+    color: white;
+
+}
+.legend-panel{
+    max-width: 350px;
+    /* width: 250px; */
+    right: 38px;
+    top: 12px;
+}
+
+.layer-panel-header{
+    font-size: 16px;
+    text-align: center;
+    color: #ed0364;
+}
+.custom-popup{
+    background-color: #ed0364!important;
+    color: white!important;
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip{
+    
+    background-color: #ed0364!important;
+    color: white!important;
+}
+
+.as-panel__element .as-box{
+    padding: 2px 16px ;
+}
+as-dropdown .as-dropdown__control{
+    min-height: 8px;
+    margin: 0;
+    padding: 3px 26px 3px 8px;
+    font-size: 10px;
+}
+.map-title{
+    background: rgb(237 3 100 / 85%);
+    padding: 10px;
+    font-size: 16px;
+    width: 96px;
+    max-width: 550px;
+    /* top: 6px; */
+    color: #ffffff;
+    font-weight: 100;
+}
+
+.legend1 label, .legend1 span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 20%;
+    text-align: center;
+    font-size: 0.7vw;
+    color: black;
+}
+.legend-box{
+
+    width: 250px;
+}
+.as-checkbox .as-checkbox-media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateX(1.5px) translateY(-4.5px);
+    fill: none;
+}
+.bottom-panel {
+    position: absolute;
+    z-index: 9999;
+    height: 0;
+    background-color: #ffffff;
+    bottom: 0;
+    width: 450px;  
+    /* display: flex;
+    position: absolute;
+    align-items: flex-start;
+    padding-bottom: 4px;
+    overflow-x: auto; */
+    pointer-events: auto;
+    
+}
+.bottom-panel-one{
+    position: absolute;
+    z-index: 9999;
+    height: 0;
+    background-color: #ffffff;
+    bottom: 0;
+    width: 900px; 
+    pointer-events: auto;
+}
+
+
+.highcharts-figure, .highcharts-data-table table {
+    min-width: 310px; 
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+#container,#container-2 {
+    height: 300px;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #ed0364;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+#locationName,#locationName2{
+    color: #ed0364;
+    width: 100%;
+}
+as-dropdown .as-dropdown--open .as-dropdown__list {
+    z-index: 99;
+    height: 150px;
+    overflow: auto;
+}
+
+.as-title {
+    margin: 0px 0px 6px;
+}
+.as-list--simple{
+    margin-bottom: 0.25rem;
+}
+
+.marker-cluster-small {
+	background-color: rgba(223, 3, 87, 0.6);
+    color: #ffffff;
+	}
+.marker-cluster-small div {
+	background-color: rgba(223, 3, 87, 0.6);
+    
+    color: #ffffff;
+	}
+
+.marker-cluster-medium {
+	background-color: rgba(223, 3, 87, 0.6);
+    
+    color: #ffffff;
+	}
+.marker-cluster-medium div {
+	background-color: rgba(223, 3, 87, 0.6);
+    
+    color: #ffffff;
+	}
+
+.marker-cluster-large {
+	background-color: rgba(223, 3, 87, 0.6);
+    color: #ffffff;
+	}
+.marker-cluster-large div {
+	background-color: rgba(223, 3, 87, 0.6);
+    color: #ffffff;
+}
+.as-caption{
+    font-size: 12px!important;
+}
+/*Verticle Legend*/
+.my-legend{
+    width: 100%;
+}
+.my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 2px;
+    font-weight: normal;
+    font-size: 10px;
+    color: #242424;
+    }
+    .legend-title-l, .legend-title-r{
+        font-size: 12px; 
+        font-weight: bold;
+    }
+  .my-legend .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .my-legend .legend-scale ul li {
+    font-size: 80%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 2px;
+    }
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 0;
+    border: 1px solid #999;
+    }
+  .my-legend .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  .my-legend a {
+    color: #777;
+    }
+    .as-map-area {
+        flex-direction: row;
+    }
+    .as-map-panels{
+        z-index: 9999;
+    }
+    button.as-tabs__item {
+        color: white;
+    }
+    button.as-tabs__item.as-tabs__item--active {
+        color: #e30561;
+        border-bottom: 2px solid #e30561;
+    }
+    .as-tabs{
+        background: #242424;
+    }
+    .map{
+        width: 50%;
+        position: relative;
+        margin: 0px;
+        border: none;
+    }
+    #map{
+        margin-right: 3px;
+    }
+    #map2{
+        margin-left: 3px;
+    }
+    .leaflet-right .leaflet-bookmarks-control {
+        margin-top: 5px;
+        margin-right: 10px;
+        padding: 5px;
+        
+    }
+    .leaflet-touch .leaflet-control-layers-toggle {
+        width: 28px;
+        height: 28px;
+    }
+    .leaflet-bar-part{
+        border: none;
+    }
+    .menu-bar{
+        cursor: pointer;
+    }
+    .custom-select{
+        font-size: 12px;
+    }
+    .as-panel--left{
+        left: 0px;
+    }
+    .as-panel--top{
+        top: 0px;
+    }
+    .modal-header{
+        padding: 0.25rem  0.1rem;
+        border-bottom: none;
+    }
